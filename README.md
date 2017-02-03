@@ -1,8 +1,7 @@
 # CHIPtainer Example
 
 Use this project as base for a custom build CHIPtainer image.
-
-In the followin we explain how to create a CHIPtainer image running the Nginx web server.
+The following explains how to create a CHIPtainer image running the Nginx web server.
 
 ## Sytem requirements
 In order to build your own customized CHIPtainer image you need a computer
@@ -12,17 +11,17 @@ Instructions how to install Docker can be found on the
 
 ## Step 1: Fork the example
 Login to ntc.githost.io and fork the [CHIPtainer Example](https://ntc.githost.io/NextThingCo/chiptainer_example) project.
-Assuming your username on ntc.githost.io is `winstonsmith`, you should have a project https://ntc.githost.io/winstonsmith/chiptainer_example
+Assuming your username on ntc.githost.io is `WINSTONSMITH`, you should have a project https://ntc.githost.io/WINSTONSMITH/chiptainer_example
 
 ## Step 2: Rename the project
 As we are going to make this an Nginx CHIPtainer, let's rename the project to
-`https://ntc.githost.io/winstonsmith/chiptainer_nginx`
+`https://ntc.githost.io/WINSTONSMITH/chiptainer_nginx`
 
 _TODO: explain how to do that --^_
 
 ## Step 3: Checkout the repository on your local computer
 ```
-git clone https://ntc.githost.io/winstonsmith/chiptainer_nginx $HOME/chiptainer_nginx
+git clone https://ntc.githost.io/WINSTONSMITH/chiptainer_nginx $HOME/chiptainer_nginx
 ```
 
 ## Step 4: Add Nginx
