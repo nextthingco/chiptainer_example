@@ -7,7 +7,7 @@ stages:
   - build
 
 variables:
-  CONTAINER_IMAGE: $CI_REGISTRY/$CI_PROJECT_PATH:$CI_BUILD_REF_NAME
+  CONTAINER_IMAGE: $CI_REGISTRY/$CI_PROJECT_PATH
 
 before_script:
   - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
