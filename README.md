@@ -149,11 +149,24 @@ git push
 
 The push will automatically trigger a build that generates a new CHIPtainer image.
 
-## Step 5: Use the container
+
+## Step 8: Use the remotely built container
 ```
 docker login ntc-registry.githost.io
-docker run  \
- -p 80:80 -p 22000:22000 -p 21027:21027/udp \
- -v -v -v ntc-registry.githost.io/WINSTONSMITH/chiptainer_syncthing
+docker run -d --name nginx -p 80:80 ntc-registry.githost.io/WINSTONSMITH/chiptainer_nginx
+```
+In your web browser open the folllowing url:
+```
+http://127.0.0.1
 ```
 
+Tear down the container:
+```
+docker stop nginx
+docker rm nginx
+```
+
+Delete the remotely built container image on yout local machine:
+```
+docker rmi ntc-registry.githost.io/WINSTONSMITH/chiptainer_nginx
+```
