@@ -27,7 +27,34 @@ _TODO: explain how to do that --^_
 git clone https://ntc.githost.io/winstonsmith/chiptainer_syncthing $HOME/chiptainer_syncthing
 ```
 
-## Step 4: Add SyncThing to the Dockefile
+## Step 4: Add SyncThing
 ```
 cd $HOME/chiptainer_syncthing
+vi Dockerfile
 ```
+
+Modify the Dockerfile:
+```
+FROM ntc-registry.githost.io/nextthingco/chiptainer_alpine:master
+
+RUN apk update && apk add syncthing
+
+RUN echo "Hello Syncthing"
+```
+
+Commit the changes:
+```
+git commit -a -m "added SyncThing"
+git push
+```
+
+The push will automatically trigger a build that generates a new CHIPtainer image.
+
+## Step 5: Use the container
+```
+docker login ntc-registry.githost.io
+docker run  \
+ -p 8384:8384 -p 22000:22000 -p 21027:21027/udp \
+ -v -v -v ntc-registry.githost.io/WINSTONSMITH/chiptainer_syncthing
+```
+
