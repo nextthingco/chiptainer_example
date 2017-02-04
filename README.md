@@ -118,6 +118,7 @@ http {
 
 To build the docker image type:
 ```
+docker login ntc-registry.githost.io
 ./build.sh
 ```
 
