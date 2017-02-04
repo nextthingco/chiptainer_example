@@ -9,6 +9,10 @@ that is running  Mac OS X or Debian/Ubuntu and has Docker installed.
 Instructions how to install Docker can be found on the
 [official Docker website](https://docs.docker.com/engine/getstarted/step_one/#step-1-get-docker).
 
+
+On Ubuntu/Debian you also need to install the `qemu-user-static` by running
+```sudo apt update && sudo apt install qemu-user-static```
+
 ## Step 1: Fork the example
 Login to ntc.githost.io and fork the [CHIPtainer Example](https://ntc.githost.io/NextThingCo/chiptainer_example) project.
 Assuming your username on ntc.githost.io is `WINSTONSMITH`, you should have a project https://ntc.githost.io/WINSTONSMITH/chiptainer_example
@@ -114,6 +118,7 @@ http {
 
 To build the docker image type:
 ```
+docker login ntc-registry.githost.io
 ./build.sh
 ```
 
